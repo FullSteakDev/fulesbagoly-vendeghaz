@@ -1,9 +1,10 @@
-// @ts-nocheck
+//@ts-nocheck
 
 'use client';
 
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { getEmails } from '@/libs/apis';
 
 const NewsletterForm = () => {
   const [email, setEmail] = useState("");
@@ -15,14 +16,17 @@ const NewsletterForm = () => {
   };
 
   const subscribeOnClick = async () => {
+    /* const data = await getEmails();
+    const existingEmails = data[0].email; */
 
     if (!email) {
       return toast.error("Kérjük, töltsd ki az Email cím mezőt!");
     }
 
     if (!validateEmail(email)) {
-      return toast.error("Kérjük, érvényes email címet adj meg!");
+      return toast.error("Kérlek, érvényes email címet adj meg!");
     }
+    
     try {
       const response = await fetch("/api/subscribe", {
         method: "POST",

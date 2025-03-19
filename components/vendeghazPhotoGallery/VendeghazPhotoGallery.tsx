@@ -44,6 +44,8 @@ const VendeghazPhotoGallery: FC<{photos: ImageType[]}> = ({ photos }) => {
               width={150}
               height={150}
               onClick={openModal.bind(this, 0)}
+              unoptimized // Kikapcsolja a Next.js képoptimalizálását
+
             />
           </div>
           <div className='md:hidden flex justify-center items-center w-full h-full'>
@@ -54,6 +56,8 @@ const VendeghazPhotoGallery: FC<{photos: ImageType[]}> = ({ photos }) => {
               width={150}
               height={150}
               onClick={openModal.bind(this, 0)}
+              unoptimized // Kikapcsolja a Next.js képoptimalizálását
+
             />
           </div>
         </div>
@@ -79,6 +83,9 @@ const VendeghazPhotoGallery: FC<{photos: ImageType[]}> = ({ photos }) => {
                 src={photo.url}
                 alt={`Vendeghaz fotó ${index + 2}`}
                 className='img scale-animation'
+                quality={100}
+                unoptimized // Kikapcsolja a Next.js képoptimalizálását
+
               />
             </div>
           ))}
@@ -93,6 +100,9 @@ const VendeghazPhotoGallery: FC<{photos: ImageType[]}> = ({ photos }) => {
                 src={photos[maximumVisiblePhotos - 1].url}
                 alt={`Vendeghaz fotó ${maximumVisiblePhotos}`}
                 className='img'
+                quality={100}
+                unoptimized // Kikapcsolja a Next.js képoptimalizálását
+
               />
               <div className='absolute cursor-pointer text-white inset-0 flex justify-center bg-[rgba(0,0,0,0.5)] items-center text-2xl'>
                 + {remainingPhotosCount}
@@ -110,6 +120,9 @@ const VendeghazPhotoGallery: FC<{photos: ImageType[]}> = ({ photos }) => {
                 width={150}
                 height={150}
                 className='img'
+                quality={100}
+                unoptimized // Kikapcsolja a Next.js képoptimalizálását
+
               />
               <div className='flex justify-between items-center py-3'>
                 <div className='flex space-x-2 items-center text-white'>

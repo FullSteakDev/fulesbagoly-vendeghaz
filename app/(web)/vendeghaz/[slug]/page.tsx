@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 //import axios from "axios";
 import VendeghazReview from '@/components/vendeghazReview/VendeghazReview';
 import BookingConfirmation from "../confirmation/page";
+import Link from "next/link";
 
 const VendeghazDetails = (props: { params: { slug: string } }) => {
     const {
@@ -57,13 +58,21 @@ const VendeghazDetails = (props: { params: { slug: string } }) => {
 
 
     const handleBookNowClick = () => {
-        if((adults + noOfChildren) > 5){
-            return toast.error('Vendégházunk befogadóképessége 5 fő');
-        };
+        // if((adults + noOfChildren) > 5){
+        //     return toast.error('Vendégházunk befogadóképessége 5 fő');
+        // };
         if (!checkinDate || !checkoutDate)
             return toast.error('Kérlek add meg bejelentkezésed / távozásod napját');
         if (checkinDate > checkoutDate)
             return toast.error('Kérlek egy valós időszakot válassz');
+
+        if (adults == 5 && noOfChildren >= 3){
+            return toast.error('Sajnos 5 felnőtt mellett maximum 2 gyerek befogadására alkalmas a vendégházunk!');
+        }
+
+        if (adults == 4 && noOfChildren >= 4){
+            return toast.error('Sajnos 4 felnőtt mellett maximum 3 gyerek befogadására alkalmas a vendégházunk!');
+        }        
 
         const numberOfDays = calcNumDays();
         const vendegHazSlug = vendeghaz.slug.current;
@@ -145,8 +154,8 @@ const VendeghazDetails = (props: { params: { slug: string } }) => {
                     </div>
 
                     <div className="shadow dark:shadow-white rounded-lg p-6">
-                        <div className="items-center mb-4">
-                            <p className="md:text-lg font-semibold">Vendégeinktől</p>
+                        <div className="items-center">
+                            <p className="md:text-lg font-semibold">Vendégeink <Link className="text-tertiary-dark underline" href='https://www.google.com/maps/place/F%C3%BClesbagoly+Vend%C3%A9gh%C3%A1z/@46.1408697,18.1449941,17z/data=!4m8!3m7!1s0x4742af3db85a1f19:0xf11148a31be2aaee!8m2!3d46.1408697!4d18.147569!9m1!1b1!16s%2Fg%2F11sv10894n?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D'>értékelései</Link></p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <VendeghazReview vendeghazId={vendeghaz._id} />

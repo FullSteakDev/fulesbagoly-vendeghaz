@@ -12,7 +12,7 @@ const Home = async () => {
       <HeroSection/>
       <FeaturedRoom featuredRoom={featuredRoom}/>
       <Gallery />
-      <NewsLetter />
+      {/* <NewsLetter />  Hírlevél komponens meghívása*/}
     </>
   );
 };

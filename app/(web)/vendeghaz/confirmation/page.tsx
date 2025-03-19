@@ -1,4 +1,4 @@
-// @ts-nocheck
+ //@ts-nocheck
 
 'use client';
 
@@ -75,7 +75,7 @@ const BookingConfirmation = () => {
                     {/* Szövegdoboz konténer */}
                     <div className="relative flex-1 flex flex-col justify-center">
                         {/* Szövegdoboz */}
-                        <div className="border border-gray-300 p-3 md:p-4 rounded-lg relative">
+                        <div className="p-3 md:p-4 rounded-lg relative">
                             {/* Gombok - szövegdoboz felső részén, jobb oldalon */}
                             <div className=" mt-1 absolute -top-8 right-2 flex space-x-2">
                                 {/* Másolás gomb */}
@@ -117,9 +117,11 @@ const BookingConfirmation = () => {
                                     Végösszeg: {finalAmount} Ft
                                 </p>
                                 <br />
+                                <p><span className="font-medium">Név:</span> </p>
                                 <p><span className="font-medium">Telefonszám:</span> </p>
                                 <p><span className="font-medium">Email cím:</span> </p>
-                                <p><span className="font-medium">Kívánság/kérdés:</span> </p>
+                                <p><span className="font-medium">Kívánság,kérdés:</span> </p>
+                                <p><span className="font-medium">Fizetési mód:</span> </p>
                             </div>
                         </div>
                         <div className="mt-5">
@@ -131,6 +133,8 @@ const BookingConfirmation = () => {
                                     <li>készpénz</li>
                                 </ul>
                             </div>
+                            <p className="mt-2">Kérjük, a visszaigazoló email után, amennyiben a foglalást jóváhagytuk, a végösszeg 20%-át utalja el a következő bankszámlaszámra:</p>
+                            <p className="text-orange-500">120725210143127200300003</p>
                         </div>
                     </div>
                 </div>

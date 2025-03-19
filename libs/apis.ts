@@ -6,6 +6,7 @@ import axios from "axios";
 import { Booking } from "@/models/booking";
 import { CreateReviewDto, Review, UpdateReviewDto } from "@/models/review";
 import { Newsletter } from "@/models/newsletter";
+import { Patch } from "next-sanity";
 
 export async function getFeaturedRoom() {
     const result = await sanityClient.fetch<Vendeghaz>(
@@ -234,4 +235,11 @@ export const updateVendegHaz = async (vendegHazId: string) => {
   
     return data;
 
+  };
+
+  export async function getEmails() {
+    const result = await sanityClient.fetch(
+      queries.getEmails);
+  
+    return result;
   };

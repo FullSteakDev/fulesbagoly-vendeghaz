@@ -1,9 +1,9 @@
 import Link from "next/link"
-import { BsFillSendFill, BsTelephoneOutbound, BsFacebook, BsPinMapFill } from "react-icons/bs"
+import { BsFillHouseDoorFill, BsFiletypePdf, BsFillSendFill, BsTelephoneOutbound, BsFacebook, BsPinMapFill } from "react-icons/bs"
 
 const Footer = () => {
     return (
-        <footer className="mt-16">
+        <footer className="mt-5">
             <div className="container mx-auto px-4">
                 <Link href='/' className="font-black text-xl text-tertiary-dark">
                     🦉 Fülesbagoly 🦉
@@ -36,14 +36,24 @@ const Footer = () => {
                         </div>
                     </div>
 
-{/*                     <div className="flex-1 md:text-middle mt-5">
-                        <p className="pb-4">Történetünk</p>
-                        <p className="pb-4">Lépj kapcsolatba velünk</p>
-                        <p className="pb-4">Adatvédelmi elkötelezettség</p>
-                        <p className="pb-4">Szolgáltatási feltételek</p>
+                     <div className="flex-1 md:text-middle mt-5">
+                        <div className="flex items-center item">
+                            <BsFillHouseDoorFill />
+                            <p className="ml-2">NTAK Regisztrációs szám: MA23057136</p>
+                        </div>
+                        <div className="flex item-center item pt-4">
+                            <BsFiletypePdf />
+                            <p className="ml-2"><Link href='https://drive.google.com/file/d/1OE1qtawDTIxYzP6bHn7b_nHflZodRrds/view?usp=share_link'>
+                            Adatvédelmi Szabályzat</Link></p>
+                        </div>
+                        <div className="flex item-center item pt-4">
+                        <BsFiletypePdf />
+                        <p className="ml-2"><Link href='https://drive.google.com/file/d/1ftF94sANwZ-HZiSgFwmyZ0gDxu6LuAnE/view?usp=share_link'>
+                        Házirend</Link></p>
+                        </div>
                     </div>
 
-                    <div className="felx-1 md:text-right mt-5">
+                    {/* <div className="felx-1 md:text-right mt-5">
                         <p className="pb-4">Események</p>
                         <p className="pb-4">Környezet</p>
                         <p>Kikapcsolódás</p>

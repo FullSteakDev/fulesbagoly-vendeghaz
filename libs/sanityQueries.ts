@@ -71,3 +71,7 @@ export const getReservedDatesQuery = groq`*[_type == 'booking'] {
     checkinDate,
     checkoutDate
 }`
+
+export const getEmails = groq`*[_type == 'newsletter'] {
+    email
+}`

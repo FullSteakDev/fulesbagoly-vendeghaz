@@ -165,7 +165,7 @@ const BookVendeghazCta: FC<Props> = props => {
             htmlFor='children'
             className='block text-sm font-medium text-gray-900 dark:text-gray-400'
           >
-            Gyerekek
+            Gyerekek (14 év alatt)
           </label>
           <input
             type='number'
